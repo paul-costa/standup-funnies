@@ -5,8 +5,8 @@ export class PostModel {
   imgUrl?: string;
 
   author!: {
-    id: string;
-    firstname: string;
-    surname: string;
+    id?: string;
+    firstname?: string;
+    surname?: string;
   }
 }

@@ -7,8 +7,9 @@ import { PostComponent } from './haha/post/post.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import {MatCardModule} from '@angular/material/card';
-import { HttpClientModule } from '@angular/common/http';
+import {MatButtonModule} from '@angular/material/button';
 
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,8 +21,9 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatCardModule,
     HttpClientModule,
+    MatCardModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
