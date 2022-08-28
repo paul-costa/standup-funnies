@@ -1,5 +1,7 @@
-import { Injectable } from '@angular/core';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Injectable, } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 import { PostModel } from '../models/post.model';
 
@@ -8,29 +10,10 @@ import { PostModel } from '../models/post.model';
 })
 export class BeService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
 
   getAllPosts(): Observable<PostModel[]> {
-    return of([
-      {
-        id: 'id1',
-        header: 'helwor1',
-        content: 'Lorem Ipsum Funny haha ',
-        author: {id: 'id1', firstname: 'Hello', surname: 'world'}
-      },
-      {
-        id: 'id2',
-        header: 'helwor2',
-        content: 'Lorem Ipsum Funny haha Lorem Ipsum Funny haha Lorem Ipsum Funny haha Lorem Ipsum Funny haha Lorem Ipsum Funny haha ',
-        author: {id: 'id2', firstname: 'Hello', surname: 'world'}
-      },
-      {
-        id: 'id3',
-        header: 'helwor3',
-        content: 'Lorem Ipsum Funny haha Lorem Ipsum Funny haha Lorem Ipsum Funny haha Lorem Ipsum Funny haha Lorem Ipsum Funny haha Lorem Ipsum Funny haha Lorem Ipsum Funny haha ',
-        author: {id: 'id3', firstname: 'Hello', surname: 'world'}
-      },
-    ])
+    return this.http.get<PostModel[]>(environment.backendApi + 'posts')
   }
 }

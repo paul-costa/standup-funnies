@@ -17,7 +17,8 @@ export class HahaComponent implements OnInit {
 
   ngOnInit(): void {
     this.beService.getAllPosts().pipe(takeUntil(this.onDestroy)).subscribe(posts => {
-      this.posts = posts
+      console.log(posts)
+      this.posts = posts;
     })
   }
 
