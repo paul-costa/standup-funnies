@@ -1,0 +1,6 @@
+<mat-card>
+  <mat-card-title>{{post?.header}}</mat-card-title>
+  <mat-card-subtitle>{{ post?.author?.firstname }} {{ post?.author?.surname }}</mat-card-subtitle>
+  <mat-card-content>{{ post?.content }}</mat-card-content>
+  <img mat-card-image [src]="post?.imgUrl" />
+</mat-card>

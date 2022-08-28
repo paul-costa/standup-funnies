@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  width: 80%;
+  margin: 0 10%;
+
+  :nth-child(1) {
+    width: 100%;
+  }
+
+  :first-child {
+    margin-top: 12px;
+  }
+
+  :not(:last-child) {
+    margin-bottom: 48px;
+  }
+}
